@@ -73,25 +73,25 @@ elements = [{'name':'company_name','type': 'T','x1' : 4.0, 'y1': 30.0, 'x2':115.
     { 'name': 'Other Ingredient: Microcrystalline Cellulose and vegetable capsules', 'type': 'T', 'x1': 178.0, 'y1': 83.0, 'x2': 320.0, 'y2': 83, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'C', 'text': '', 'size': 6, 'multiline':False},
     { 'name': 'box', 'type': 'B', 'x1': 15.0, 'y1': 15.0, 'x2': 185.0, 'y2': 260.0, 'font': 'Arial', 'size': 0.0, 'bold': 1, 'italic': 0, 'underline': 0, 'foreground': 1, 'background': 1, 'align': 'I', 'Text' : None
    }]
-f = Template(format='A4', elements=elements,title = 'Rohit', orientation= "landscape")
-f.add_page()
-f['company_name'] = "SUGGESTED DIRECTIONS:"
-f['caps_count'] = ("Take " + daily_dose + " capsules daily with food")
-f['Name'] = name
-f['P_S'] = "Personalized Supplements"
-f['Note:'] = "NOTE:"
-f['Note1'] = "Do not use if safety-seal is broken or missing."
-f['Note2'] = "Store tightly sealed in a cool, dry place."
-f['Note3'] = "If you are pregnant, lactating or taking any medications,\nconsult with your primary health care practitioner prior to taking."
-f['Made'] = "MADE BY: VITAMINLABS"
-f['Lot_number'] = ("Lot#  " +   lot_number)
-f['Mfg_date'] = ("Mfg. Date  " +   mfg_date)
-f['Customer_ID'] = ("Customer ID: " +   customer_id)
-f['Mfg_by'] = "Manufactured By :   Vitamin One Formulas LTD."
-f['Dietary'] = "Dietary Supplements"
-f['caps_per_bottle'] = (caps_per_bottle + " Capsules")
-f['per_bottle'] = "Per Container"
-f['Containes : Soy'] = "Containes : Soy"
-f['Other Ingredient: Microcrystalline Cellulose and vegetable capsules'] = "Other Ingredient: Microcrystalline Cellulose and vegetable capsules"
-f.render("temp.pdf") 
+function = Template(format='A4', elements=elements,title = 'Rohit', orientation= "landscape")
+function.add_page()
+function['company_name'] = "SUGGESTED DIRECTIONS:"
+function['caps_count'] = ("Take " + daily_dose + " capsules daily with food")
+function['Name'] = name
+function['P_S'] = "Personalized Supplements"
+function['Note:'] = "NOTE:"
+function['Note1'] = "Do not use if safety-seal is broken or missing."
+function['Note2'] = "Store tightly sealed in a cool, dry place."
+function['Note3'] = "If you are pregnant, lactating or taking any medications,\nconsult with your primary health care practitioner prior to taking."
+function['Made'] = "MADE BY: VITAMINLABS"
+function['Lot_number'] = ("Lot#  " +   lot_number)
+function['Mfg_date'] = ("Mfg. Date  " +   mfg_date)
+function['Customer_ID'] = ("Customer ID: " +   customer_id)
+function['Mfg_by'] = "Manufactured By :   Vitamin One Formulas LTD."
+function['Dietary'] = "Dietary Supplements"
+function['caps_per_bottle'] = (caps_per_bottle + " Capsules")
+function['per_bottle'] = "Per Container"
+function['Containes : Soy'] = "Containes : Soy"
+function['Other Ingredient: Microcrystalline Cellulose and vegetable capsules'] = "Other Ingredient: Microcrystalline Cellulose and vegetable capsules"
+function.render("temp.pdf") 
 
