@@ -11,7 +11,7 @@ read_file = pd.read_excel (r"C:\Users\Rohit Tagala\Downloads\TestCustomer.Feb202
 
 # Write the dataframe object into csv file
 read_file.to_csv ("BPR.csv",index = None,header=True)	
-df = pd.DataFrame(pd.read_csv("BPR.csv"))
+dataframe = pd.DataFrame(pd.read_csv("BPR.csv"))
 #print (df)
 
 read_file = pd.read_csv (r'C:\Users\Rohit Tagala\OneDrive\Documents\GitHub\Python-Files-\BPR.csv')
@@ -19,20 +19,20 @@ read_file.to_excel (r'New_BPR.xlsx', index = None, header=True)
 file = (r"C:\Users\Rohit Tagala\OneDrive\Documents\GitHub\Python-Files-\New_BPR.xlsx")
 
 # Load the entire workbook.
-wb = load_workbook(file)
+workbook = load_workbook(file)
 
 # Load one worksheet.
-ws = wb.active
-name = ws["D329"].value
+worksheet = workbook.active
+name = worksheet["D329"].value
 print (name)
-daily_dose = ws["D335"].value
+daily_dose = worksheet["D335"].value
 print (daily_dose)
-caps_per_bottle = ws["D336"].value
+caps_per_bottle = worksheet["D336"].value
 print (caps_per_bottle)
-lot_number = ws["H2"].value
-mfg_date = ws["C5"].value
+lot_number = worksheet["H2"].value
+mfg_date = worksheet["C5"].value
 print (mfg_date)
-customer_id = ws["F2"].value
+customer_id = worksheet["F2"].value
 
 ## Making supplement chart 
 item_name = []
@@ -44,19 +44,19 @@ with open (r'C:\Users\Rohit Tagala\OneDrive\Documents\GitHub\Python-Files-\BPR.c
         item_name.append(row[2])
         percent.append(row[4])
         dosage.append(row[5])
-df = pd.DataFrame({"Item_name":item_name[15:42],"percent":percent[15:42],"dosage":dosage[15:42]})
+dataframe = pd.DataFrame({"Item_name":item_name[15:42],"percent":percent[15:42],"dosage":dosage[15:42]})
 item = item_name[15:69]
 perc = percent [15:69]
 dosa = dosage[15:69]
 header = ("Ingredient", "percent", "dosage")
-Ingredient_table = (tabulate(df, headers = header, tablefmt = 'fancy_grid'))
+Ingredient_table = (tabulate(dataframe, headers = header, tablefmt = 'fancy_grid'))
 #print (Ingredient_table)
 
 
 elements = [{'name':'company_name','type': 'T','x1' : 4.0, 'y1': 30.0, 'x2':115.0,'y2':37.8, 'font': 'Helvetica', 'align': 'L', 'text': ''},
 {'name':'caps_count','type': 'T','x1' : 4.0, 'y1': 35.0, 'x2':115.0,'y2':41, 'font': 'Helvetica', 'align': 'L', 'text': ''},
     { 'name': 'Name', 'type': 'T', 'x1': 121.0, 'y1': 46.0, 'x2': 135.0, 'y2': 25.0, 'font': 'Helvetica', 'bold': 1.0,'align': 'L', 'text': '', 'size':16},
-    { 'name': 'P_S', 'type': 'T', 'x1': 121.0, 'y1': 49.0, 'x2': 132.0, 'y2': 30.0, 'font': 'Helvetica', 'bold': 0,'underline': 1.0 ,'align': 'C', 'text': '','size':8 },
+    { 'name': 'P_S', 'type': 'T', 'x1': 123.0, 'y1': 49.0, 'x2': 135.0, 'y2': 30.0, 'font': 'Helvetica', 'bold': 0,'underline': 1.0 ,'align': 'C', 'text': '','size':8 },
     { 'name': 'Note:', 'type': 'T', 'x1': 4.0, 'y1': 50.0, 'x2': 75.0, 'y2': 45.0, 'font': 'Helvetica', 'bold': 1,'underline': 0 ,'align': 'L', 'text': '', 'size': 13 , 'multiline':False},
     { 'name': 'Note1', 'type': 'T', 'x1': 4.0, 'y1': 53.0, 'x2': 75.0, 'y2': 53.0, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'L', 'text': '', 'size': 6 , 'multiline':False},
     { 'name': 'Note2', 'type': 'T', 'x1': 4.0, 'y1': 56.0, 'x2': 75.0, 'y2': 56.0, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'L', 'text': '', 'size': 6 , 'multiline':False},
