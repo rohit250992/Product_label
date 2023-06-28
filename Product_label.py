@@ -55,8 +55,8 @@ Ingredient_table = (tabulate(df, headers = header, tablefmt = 'fancy_grid'))
 
 elements = [{'name':'company_name','type': 'T','x1' : 4.0, 'y1': 30.0, 'x2':115.0,'y2':37.8, 'font': 'Helvetica', 'align': 'L', 'text': ''},
 {'name':'caps_count','type': 'T','x1' : 4.0, 'y1': 35.0, 'x2':115.0,'y2':41, 'font': 'Helvetica', 'align': 'L', 'text': ''},
-    { 'name': 'Name', 'type': 'T', 'x1': 118.0, 'y1': 46.0, 'x2': 135.0, 'y2': 25.0, 'font': 'Helvetica', 'bold': 1.0,'align': 'L', 'text': '', 'size':13},
-    { 'name': 'P_S', 'type': 'T', 'x1': 115.0, 'y1': 49.0, 'x2': 132.0, 'y2': 30.0, 'font': 'Helvetica', 'bold': 0,'underline': 1.0 ,'align': 'C', 'text': '','size':8 },
+    { 'name': 'Name', 'type': 'T', 'x1': 121.0, 'y1': 46.0, 'x2': 135.0, 'y2': 25.0, 'font': 'Helvetica', 'bold': 1.0,'align': 'L', 'text': '', 'size':16},
+    { 'name': 'P_S', 'type': 'T', 'x1': 121.0, 'y1': 49.0, 'x2': 132.0, 'y2': 30.0, 'font': 'Helvetica', 'bold': 0,'underline': 1.0 ,'align': 'C', 'text': '','size':8 },
     { 'name': 'Note:', 'type': 'T', 'x1': 4.0, 'y1': 50.0, 'x2': 75.0, 'y2': 45.0, 'font': 'Helvetica', 'bold': 1,'underline': 0 ,'align': 'L', 'text': '', 'size': 13 , 'multiline':False},
     { 'name': 'Note1', 'type': 'T', 'x1': 4.0, 'y1': 53.0, 'x2': 75.0, 'y2': 53.0, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'L', 'text': '', 'size': 6 , 'multiline':False},
     { 'name': 'Note2', 'type': 'T', 'x1': 4.0, 'y1': 56.0, 'x2': 75.0, 'y2': 56.0, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'L', 'text': '', 'size': 6 , 'multiline':False},
@@ -71,7 +71,7 @@ elements = [{'name':'company_name','type': 'T','x1' : 4.0, 'y1': 30.0, 'x2':115.
     { 'name': 'per_bottle', 'type': 'T', 'x1': 115.0, 'y1': 83.0, 'x2': 140.0, 'y2': 83, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'C', 'text': '', 'size': 6, 'multiline':False},
     { 'name': 'Containes : Soy', 'type': 'T', 'x1': 160.0, 'y1': 80.0, 'x2': 290.0, 'y2': 80, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'C', 'text': '', 'size': 6, 'multiline':False},
     { 'name': 'Other Ingredient: Microcrystalline Cellulose and vegetable capsules', 'type': 'T', 'x1': 178.0, 'y1': 83.0, 'x2': 320.0, 'y2': 83, 'font': 'Helvetica', 'bold': 0,'underline': 0 ,'align': 'C', 'text': '', 'size': 6, 'multiline':False},
-    { 'name': 'box', 'type': 'B', 'x1': 15.0, 'y1': 15.0, 'x2': 185.0, 'y2': 260.0, 'font': 'Arial', 'size': 0.0, 'bold': 1, 'italic': 0, 'underline': 0, 'foreground': 1, 'background': 1, 'align': 'I', 'Text' : None
+    { 'name': 'Supplements Facts', 'type': 'T', 'x1': 185.0, 'y1': 25.0, 'x2': 185.0, 'y2': 25.0, 'font': 'Helvetica', 'bold': 1,'underline': 0 ,'align': 'C', 'text': '', 'size': 15, 'multiline':False
    }]
 function = Template(format='A4', elements=elements,title = 'Rohit', orientation= "landscape")
 function.add_page()
@@ -93,5 +93,5 @@ function['caps_per_bottle'] = (caps_per_bottle + " Capsules")
 function['per_bottle'] = "Per Container"
 function['Containes : Soy'] = "Containes : Soy"
 function['Other Ingredient: Microcrystalline Cellulose and vegetable capsules'] = "Other Ingredient: Microcrystalline Cellulose and vegetable capsules"
+function['Supplements Facts'] = "SUPPLEMENT FACTS"
 function.render("temp.pdf") 
-
